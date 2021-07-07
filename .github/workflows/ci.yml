@@ -1,0 +1,93 @@
+name: Continous Integration and Deployment
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main, sandbox]
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:11
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Ruby 
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 3.0
+
+      - name: Cache gems
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gem-
+      
+      - name: Run rubocop with reviewdog
+        # You may pin to the exact commit or the version.
+        # uses: reviewdog/action-rubocop@cdeaf0c191d62bcc651ae3a231c268f10b8ca1a5
+        uses: reviewdog/action-rubocop@v1
+        with:
+          rubocop_version: 1.8.1
+          github_token: ${{ secrets.CUSTOM_TOKEN} }}
+
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+      
+      - name: Build and test with R
+        env:
+          PGHOST: 127.0.0.1
+          PGUSER: postgres
+          RAILS_ENV: test
+        run: |
+          bundle exec rails db:create
+          bundle exec rails db:migrate
+          bundle exec rspec
+
+      - name: Upload Test Coverage
+        uses: actions/upload-artifact@v1
+        with:
+          name: code-coverage
+          path: coverage
+
+      - name: ZIP Assets
+        if: ( github.event_name == 'push' && github.ref == 'refs/heads/main')
+        run: zip -r coverage.zip ./coverage
+
+      - name: Deploying code to Productions from main
+        if: (github.ref == 'refs/heads/main' && github.event_name == 'push')
+        uses: AkhileshNS/heroku-deploy@v3.12.12
+        with: 
+          heroku_api_key: $HEROKU_AUTH_TOKEN 
+          heroku_app_name: "ruby-task-manager" 
+          heroku_email: $EMAIL 
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
+          HEROKU_AUTH_TOKEN: ${{ secrets.HEROKU_AUTH_TOKEN }}
+
+
+      - name: Open Github Issue
+        if: failure() && github.event_name == 'push'
+        uses: alialaa/issue-action@v1.0.0
+        with:
+          token: ${{ secrets.CUSTOM_TOKEN}}
+          title: Automated Issue for Commit ${{github.sha}}
+          body: "This issue was automatically created by
+            the GitHub Action workflow **${{ github.workflow
+            }}**. \n\n The commit hash was: _${{ github.sha}}_."
+          assignees: ${{github.event.pull_request.user.login }}
