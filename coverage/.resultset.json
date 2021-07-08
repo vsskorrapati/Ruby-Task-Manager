@@ -208,6 +208,41 @@
           null
         ]
       },
+      "/Users/vkorrapati/Documents/Rails Projetcts/rails-task-manager/config/initializers/omniauth.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/vkorrapati/Documents/Rails Projetcts/rails-task-manager/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
@@ -464,6 +499,6 @@
         ]
       }
     },
-    "timestamp": 1625643583
+    "timestamp": 1625738822
   }
 }

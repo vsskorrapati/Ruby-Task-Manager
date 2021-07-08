@@ -25,6 +25,7 @@ gem 'jsom-pagination'
 gem 'jsonapi-serializer'
 gem 'jsonapi_errors_handler'
 gem 'simplecov', require: false, group: :test
+gem 'omniauth-google-oauth2'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'

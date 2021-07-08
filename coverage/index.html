@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-07-07T13:09:43+05:30">2021-07-07T13:09:43+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-07-08T15:37:02+05:30">2021-07-08T15:37:02+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -39,7 +39,7 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>22</b> files in total.
+    <b>23</b> files in total.
   </div>
 
   <div class="t-line-summary">
@@ -239,6 +239,17 @@
             <td class="strong t-file__name"><a href="#3ef5c47a7d29cd43f8b616074c994fddac212ac6" class="src_link" title="config/initializers/mime_types.rb">config/initializers/mime_types.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">4</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">0.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#2457a1f807e6c88343e7d50e7270f05b4483e5de" class="src_link" title="config/initializers/omniauth.rb">config/initializers/omniauth.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">31</td>
             <td class="cell--number">0</td>
             <td class="cell--number">0</td>
             <td class="cell--number">0</td>
@@ -3380,6 +3391,378 @@
             
 
             <code class="ruby"># Mime::Type.register &quot;text/richtext&quot;, :rtf</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="2457a1f807e6c88343e7d50e7270f05b4483e5de">
+  <div class="header">
+    <h3>config/initializers/omniauth.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>0</b> relevant lines.
+      <span class="green"><b>0</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="1">
+            
+            
+
+            
+
+            <code class="ruby"># Rails.application.config.middleware.use OmniAuth::Builder do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby">#   # Default usage, this will give you offline access and a refresh token</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="3">
+            
+            
+
+            
+
+            <code class="ruby">#   # using default scopes &#39;email&#39; and &#39;profile&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
+            
+            
+
+            
+
+            <code class="ruby">#   #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="5">
+            
+            
+
+            
+
+            <code class="ruby">#   provider :google_oauth2, ENV[&#39;GOOGLE_KEY&#39;], ENV[&#39;GOOGLE_SECRET&#39;], scope: &#39;email,profile&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+            
+
+            
+
+            <code class="ruby">#   # Custom redirect_uri</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">#   #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby">#   # provider :google_oauth2, ENV[&#39;GOOGLE_KEY&#39;], ENV[&#39;GOOGLE_SECRET&#39;], scope: &#39;email,profile&#39;, redirect_uri: &#39;https://localhost:3000/redirect&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">#   # Manual setup for offline access with a refresh token.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby">#   #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">#   # provider :google_oauth2, ENV[&#39;GOOGLE_KEY&#39;], ENV[&#39;GOOGLE_SECRET&#39;], access_type: &#39;offline&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">#   # Custom scope supporting youtube. If you are customizing scopes, remember</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">#   # to include the default scopes &#39;email&#39; and &#39;profile&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby">#   #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby">#   # provider :google_oauth2, ENV[&#39;GOOGLE_KEY&#39;], ENV[&#39;GOOGLE_SECRET&#39;], scope: &#39;http://gdata.youtube.com,email,profile,plus.me&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
+            
+            
+
+            
+
+            <code class="ruby">#   # Custom scope for users only using Google for account creation/auth and do not require a refresh token.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby">#   #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">#   # provider :google_oauth2, ENV[&#39;GOOGLE_KEY&#39;], ENV[&#39;GOOGLE_SECRET&#39;], access_type: &#39;online&#39;, prompt: &#39;&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby">#   # To include information about people in your circles you must include the &#39;plus.login&#39; scope.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+            
+
+            
+
+            <code class="ruby">#   #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby">#   # provider :google_oauth2, ENV[&#39;GOOGLE_KEY&#39;], ENV[&#39;GOOGLE_SECRET&#39;], skip_friends: false, scope: &#39;email,profile,plus.login&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="27">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="28">
+            
+            
+
+            
+
+            <code class="ruby">#   # If you need to acquire whether user picture is a default one or uploaded by user.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="29">
+            
+            
+
+            
+
+            <code class="ruby">#   #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">#   # provider :google_oauth2, ENV[&#39;GOOGLE_KEY&#39;], ENV[&#39;GOOGLE_SECRET&#39;], skip_image_info: false</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby"># end</code>
           </li>
         </div>
       
