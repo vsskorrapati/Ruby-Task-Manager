@@ -71,7 +71,7 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          directory: ./coverage
+          directory: ./coverage            
 
       - name: ZIP Assets
         if: ( github.event_name == 'push' && github.ref == 'refs/heads/main')

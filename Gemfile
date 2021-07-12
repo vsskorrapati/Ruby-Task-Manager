@@ -25,6 +25,7 @@ gem 'jsom-pagination'
 gem 'jsonapi-serializer'
 gem 'jsonapi_errors_handler'
 gem 'simplecov', require: false, group: :test
+gem 'omniauth'
 gem 'omniauth-google-oauth2'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
@@ -34,7 +35,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails', '~> 5.0.0'
   gem 'factory_bot_rails'
-
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
