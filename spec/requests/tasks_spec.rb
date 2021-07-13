@@ -74,4 +74,97 @@ RSpec.describe "Tasks", type: :request do
       end
     end
   end
+
+
+  # describe '#create' do
+  #   subject { post '/tasks' }
+
+  #   # context 'when no code provided' do
+  #   #   it_behaves_like 'forbidden_requests'
+  #   # end
+
+  #   # context 'when invalid code provided' do
+  #   #   before { request.headers['authorization'] = 'Invalid token' }
+  #   #   it_behaves_like 'forbidden_requests'
+  #   # end
+
+  #   context 'when authorized' do
+  #     let(:accesstoken) { create :accesstoken }
+  #     before { request.headers['authorization'] = "Bearer #{accesstoken.token}" }
+
+  #   context 'when invalid parameters provided' do
+  #     let(:invalid_attributes) do
+  #         {
+  #           data: {
+  #             attributes: {
+  #               name: '',
+  #               description: ''
+  #             }
+  #           }
+  #         }
+  #       end
+
+  #       subject { post '/tasks', params: invalid_attributes }
+
+  #       it 'should return 422 status code' do
+  #         subject
+  #         expect(response).to have_http_status(:unprocessable_entity)
+  #       end
+
+  #       it 'should return proper error json' do
+  #         subject
+  #         expect(json['errors']).to include(
+  #           {
+  #             "source" => { "pointer" => "/data/attributes/title" },
+  #             "detail" =>  "can't be blank"
+  #           },
+  #           {
+  #             "source" => { "pointer" => "/data/attributes/content" },
+  #             "detail" =>  "can't be blank"
+  #           },
+  #           {
+  #             "source" => { "pointer" => "/data/attributes/slug" },
+  #             "detail" =>  "can't be blank"
+  #           }
+  #         )
+  #       end
+  #     end
+
+  #     context 'when success request sent' do
+  #       let(:accesstoken) { create :accesstoken }
+  #       before { request.headers['authorization'] = "Bearer #{accesstoken.token}" }
+
+  #       let(:valid_attributes) do
+  #         {
+  #           'data' => {
+  #             'attributes' => {
+  #               'name' => 'Awesome name',
+  #               'description' => 'Description'
+  #             }
+  #           }
+  #         }
+  #       end
+
+  #       subject { post '/tasks', params: valid_attributes }
+
+  #       it 'should have 201 status code' do
+  #         subject
+  #         expect(response).to have_http_status(:created)
+  #       end
+
+  #       it 'should have proper json body' do
+  #         subject
+  #         expect(json_data['attributes']).to include(
+  #           valid_attributes['data']['attributes']
+  #         )
+  #       end
+
+  #       it 'should create the task' do
+  #         expect{ subject }.to change{ Taskicle.count }.by(1)
+  #       end
+  #     end
+  #   end
+  # end
+
+
 end
