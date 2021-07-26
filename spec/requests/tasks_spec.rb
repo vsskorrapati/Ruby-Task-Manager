@@ -79,14 +79,14 @@ RSpec.describe "Tasks", type: :request do
   # describe '#create' do
   #   subject { post '/tasks' }
 
-  #   # context 'when no code provided' do
-  #   #   it_behaves_like 'forbidden_requests'
-  #   # end
+  #   context 'when no code provided' do
+  #     it_behaves_like 'forbidden_requests'
+  #   end
 
-  #   # context 'when invalid code provided' do
-  #   #   before { request.headers['authorization'] = 'Invalid token' }
-  #   #   it_behaves_like 'forbidden_requests'
-  #   # end
+  #   context 'when invalid code provided' do
+  #     before { request.headers['authorization'] = 'Invalid token' }
+  #     it_behaves_like 'forbidden_requests'
+  #   end
 
   #   context 'when authorized' do
   #     let(:accesstoken) { create :accesstoken }
@@ -103,7 +103,7 @@ RSpec.describe "Tasks", type: :request do
   #           }
   #         }
   #       end
-
+               
   #       subject { post '/tasks', params: invalid_attributes }
 
   #       it 'should return 422 status code' do

@@ -27,6 +27,7 @@ gem 'jsonapi_errors_handler'
 gem 'simplecov', require: false, group: :test
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'simplecov-cobertura'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
